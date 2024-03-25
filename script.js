@@ -1,13 +1,18 @@
 function getWeekendPlans() {
-    const location = document.getElementById('location').value.trim();
+    const location = document.getElementById('locationInput').value.trim();
 
     if (!location) {
         alert('Please enter your location.');
         return;
     }
 
-    fetch(`/suggest-plans?location=${location}`)
-        .then(response => response.json())
+    fetch(`/suggest-plans?location=${encodeURIComponent(location)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch weekend plans');
+            }
+            return response.json();
+        })
         .then(data => {
             const plansDiv = document.getElementById('plans');
             plansDiv.innerHTML = '';
