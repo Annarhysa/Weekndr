@@ -21,10 +21,13 @@ def suggest_plans():
     # Filter the data based on the provided location
     filtered_data = data[data['city'] == location]
 
-    # Get the unique weekend plans for the location
-    suggested_plans = filtered_data['plan','decsription', 'reference'].unique().tolist()
+    #extracting the plan for the specific city and the descripton of the plan
+    filtered_data_columns = filtered_data[['plan', 'description', 'reference']]
+    filtered_data_list = filtered_data_columns.apply(lambda x: x.unique().tolist()).tolist()
 
-    return jsonify({'suggested_plans': suggested_plans})
+    return jsonify({'suggested_plans': filtered_data_list[0]},
+                    {'Description': filtered_data_list[1]},
+                    {'Link': filtered_data_list[2]})
 
 if __name__ == '__main__':
     app.run(debug=True)
