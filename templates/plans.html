@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
     <title>Weekend Plans</title>
 </head>
 <body>
     <h1>Weekend Plans</h1>
-    {% for plan, description, link in suggested_plans %}
-        <div>
-            <h2>{{ plan }}</h2>
-            <p>{{ description }}</p>
-            <a href="{{ link }}">More Info</a>
-        </div>
-    {% endfor %}
+    <p>{{plans}}</p>
 </body>
 </html>
