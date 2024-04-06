@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekend Plans</title>
+</head>
+<body>
+    <h1>Weekend Plans</h1>
+    {% for plan, description, link in suggested_plans %}
+        <div>
+            <h2>{{ plan }}</h2>
+            <p>{{ description }}</p>
+            <a href="{{ link }}">More Info</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
