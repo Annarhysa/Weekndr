@@ -10,10 +10,15 @@
     <div id = container>
         <h1>Here are some weekend plans in {{ location }}</h1>
         <br>
-        {% for plan in zip(*plan) %}
-            {% for item in plan %}
-                {% if pd.notna(item) %}
-                    <ul>{{ item }}</ul>
+        {% for items in plans %}
+            <h2>{{ items[0] }}</h2>
+            {% for i in range(1, loop.length) %}
+                {% if items[i] %}
+                    {% if i == 1 %}
+                        <p>{{ items[i] }}</p>
+                    {% else %}
+                        <a href="{{ items[i] }}">{{ items[i] }}</a>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         {% endfor %}
