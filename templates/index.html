@@ -9,12 +9,11 @@
 <body>
     <div class="container">
         <h1>Weekend Plans Suggestion App</h1>
-        <label for="location">Enter your location:</label>
-        <input type="text" id="locationInput" placeholder="Enter your location">
-        <button onclick="getWeekendPlans()">Get Plans</button>
-        <div id="plans"></div>
+        <form action = "/suggest_plans" method = "post">
+            <label for="location">Enter your city:</label>
+            <input type="text" id="location" name ="location" placeholder="Eg: Mumbai">
+            <button type = "submit" value = "Submit">Get Plans</button>
     </div>
 
-    <script src="static/script.js"></script>
 </body>
 </html>
