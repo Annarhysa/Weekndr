@@ -7,7 +7,16 @@
     <title>Weekend Plans</title>
 </head>
 <body>
-    <h1>Weekend Plans</h1>
-    <p>{{plans}}</p>
+    <div id = container>
+        <h1>Here are some weekend plans in {{ location }}</h1>
+        <br>
+        {% for plan in zip(*plan) %}
+            {% for item in plan %}
+                {% if pd.notna(item) %}
+                    <ul>{{ item }}</ul>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
 </body>
 </html>

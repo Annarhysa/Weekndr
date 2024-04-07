@@ -24,13 +24,30 @@ def suggest_plans():
 
     # Extracting the plan for the specific city and the description of the plan
     filtered_data_columns = filtered_data[['plan', 'description', 'reference']]
-    filtered_data_list = filtered_data_columns.apply(lambda x: x.unique().tolist()).tolist()
+    
+    # Check for duplicates row by row
+    has_duplicates = False
+    for index, row in data.iterrows():
+        if len(row) != len(set(row)):
+            has_duplicates = True
+            break
 
-    # Extract plans, descriptions, and links for the specific city
+    # If duplicates exist, perform the action
+    if has_duplicates:
+        # Convert the DataFrame to a list of lists
+        data_list = filtered_data_columns.values.tolist()
+
+        # Remove duplicate values from each inner list
+        filtered_data_list = [list(set(row)) for row in data_list]
+
+    else:
+        # No duplicates, just convert the DataFrame to a list of lists
+        filtered_data_list = filtered_data_columns.values.tolist()
+
     suggested_plans = list(zip(filtered_data_list[0], filtered_data_list[1], filtered_data_list[2]))
 
     # Render the output on an HTML page
-    return render_template('plans.html', plans=suggested_plans)
+    return render_template('plans.html', plans=suggested_plans, location = location)
 
 if __name__ == '__main__':
     app.run(debug=True)
