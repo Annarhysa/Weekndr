@@ -44,10 +44,8 @@ def suggest_plans():
         # No duplicates, just convert the DataFrame to a list of lists
         filtered_data_list = filtered_data_columns.values.tolist()
 
-    suggested_plans = list(zip(filtered_data_list[0], filtered_data_list[1], filtered_data_list[2]))
-
     # Render the output on an HTML page
-    return render_template('plans.html', plans=suggested_plans, location = location)
+    return render_template('plans.html', plans=filtered_data_list, location = location)
 
 if __name__ == '__main__':
     app.run(debug=True)
