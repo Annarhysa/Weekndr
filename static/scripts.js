@@ -23,7 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getFilteredSuggestions(inputText) {
         // Example: Fetch suggestions from a server based on inputText
-        const allSuggestions = ['new york', 'los angeles', 'chicago', 'san francisco', 'seattle'];
+        const allSuggestions = ['Florence','Milan','Naples','Edinburgh','Glasgow','Manchester','Birmingham','Liverpool',
+        'Bristol','Cardiff','Belfast','Dublin','New York','Los Angeles','Chicago','San Francisco','Miami','London','Tokyo',
+        'Sydney','Paris','Rome','Cairo','Rio de Janeiro','Dubai','Seattle','Toronto','Berlin','Amsterdam','Barcelona','Munich',
+        'Vienna','Prague','Budapest','Athens','Istanbul','Moscow','Stockholm','Oslo','Copenhagen','Helsinki','Reykjavik',
+        'Dubrovnik','Santorini','Lisbon','Madrid','Seville','Jaipur','Delhi','Agra','Bangkok','Phuket','Chiang Mai',
+        'Krabi','Kyoto','Osaka','Hiroshima','Nara','Sapporo','Okinawa','Melbourne','Brisbane','Perth','Adelaide','Auckland',
+        'Wellington','Christchurch','Venice','Mumbai','Seoul','Beijing','Shanghai','Hong Kong','Singapore','Kuala Lumpur',
+        'Bangalore','Chennai'];
         return allSuggestions.filter(function(suggestion) {
             return suggestion.toLowerCase().startsWith(inputText);
         });
