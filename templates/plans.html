@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/plans.css">
     <title>Weekend Plans</title>
 </head>
 <body>
     <div id = container>
         <h1>Here are some weekend plans in {{ location }}</h1>
-        <br>
+        <hr>
+    </div>
+    <div id = plans>
         {% for items in plans %}
             <h2>{{ items[0] }}</h2>
-            {% for i in range(1, loop.length) %}
-                {% if items[i] %}
-                    {% if i == 1 %}
-                        <p>{{ items[i] }}</p>
-                    {% else %}
-                        <a href="{{ items[i] }}">{{ items[i] }}</a>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
+            <li>Description: {{ items[1] }}</li>
+            <li>Link: <a href="{{ items[2] }}">{{ items[2] }}</a></li>
         {% endfor %}
     </div>
 </body>

@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #000000, #ffffff);
+    background: linear-gradient(100deg, #8cdf8c, #ffffff, #ffd166);
     background-size: 400% 400%;
     animation: gradientBackground 10s ease infinite;
     display: flex;
