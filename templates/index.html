@@ -9,11 +9,13 @@
 <body>
     <div class="container">
         <h1>Weekend Plans Suggestion App</h1>
-        <form action = "/suggest_plans" method = "post">
+        <form id = 'search-form' action = "/suggest_plans" method = "post">
             <label for="location">Enter your city:</label>
             <input type="text" id="location" name ="location" placeholder="Eg: Mumbai">
+            <div id="suggestions"></div>
             <button type = "submit" value = "Submit">Get Plans</button>
+        </form>
     </div>
-
+    <script src="static/scripts.js"></script>
 </body>
 </html>

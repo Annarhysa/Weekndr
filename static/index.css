@@ -50,6 +50,29 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+#suggestions {
+    position: absolute;
+    width: 490px;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-right: 100px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+#suggestions div {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
 /* Animation for gradient background */
 @keyframes gradientBackground {
     0% {
